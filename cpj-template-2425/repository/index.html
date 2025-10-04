@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Creative Process Journal, 24-25.</title>
+
+    <!-- Meta information, for machines to read, SEO. @see ref-0  -->
+    <meta charset="utf-8" />
+    <meta name="description" content="" />
+    <meta name="Author" content="" />
+    <meta name="keywords" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+
+    <!-- Load StyleSheets -->
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
+  </head>
+
+  <body>
+    <!-- header section, menu and title. @see ref-1 -->
+    <header>
+      <nav class="main__nav-bar">
+        <ul class="main__nav-title">
+          <li><a href="/">Project Title</a></li>
+          <li class="mobile__hide"><a href="/about">Your Name</a></li>
+        </ul>
+        <ul class="main__nav-list">
+          <li class="main__nav-item"><a href="/">overview</a></li>
+          <li class="main__nav-item"><a href="/repository">repository</a></li>
+          <li class="main__nav-item"><a href="/about">about</a></li>
+          <li class="main__nav-about">
+            <p>
+              A design communication graduation project.
+            </p>
+          </li>
+        </ul>
+        <div class="main__nav-ham">
+          <span class="main__nav-ham-bar"></span>
+          <span class="main__nav-ham-bar"></span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- main section, all your content. @see ref-2 -->
+    <main>
+      <article>
+        <section id="intro">
+          <div class="row color__bg-6 height__half margin__m">
+            <div class="column"></div>
+          </div>
+        </section>
+
+        <section id="repository">
+          <div class="row padding__top-m margin__m">
+            <div class="column sticky padding__top-xl margin__right-xl">
+              <h2>Repository</h2>
+              <p class="p__size-m">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam iste
+                fugiat facilis praesentium necessitatibus, earum eligendi odio. Possimus vel, totam
+                aspernatur magnam velit consequatur iure consectetur dolorum id quam soluta.
+              </p>
+            </div>
+
+            <div class="column__double height__all">
+              <p class="p__size-l">
+                Find a selection of resources below, for a full list of resources, take a look at my
+                <a href="" target="_blank">are.na archive</a>. Lorem ipsum dolor sit amet consectetur adipisicing elit. Id unde, eos rerum
+                perferendis ipsum explicabo. Sunt quis minima vel suscipit aut error maiores. Hic
+                eligendi deserunt excepturi unde. Earum, beatae?
+              </p>
+              <div class="padding__top-l">
+                <!-- auto generated content, see repo.json file -->
+                <div id="repo-books" class="repo"></div>
+                <div id="repo-articles" class="repo"></div>
+                <div id="repo-casestudies" class="repo"></div>
+                <div id="repo-experiments" class="repo"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </article>
+    </main>
+
+    <footer>
+      <div class="scroll__top"><a href="javascript:scrollToTop();">↑</a></div>
+    </footer>
+
+    <div id="lightbox"></div>
+    <script src="../js/main.js"></script>
+
+    <script>
+      loadJSON("./repo.json", generateRepoItemsFrom, logErrorMessage);
+    </script>
+  </body>
+</html>
