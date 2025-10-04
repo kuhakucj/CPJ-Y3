@@ -1,0 +1,47 @@
+/* **********************************************************
+ * add custom styles after imports below
+ * ********************************************************** */
+
+@import "default.css";
+@import "layout.css";
+@import "menu.css";
+@import "queries.css";
+
+/* **********************************************************
+ * to import a font, use the @import option, you can find
+ * lots of font options at fonts.google.com for example.
+ * ********************************************************** */
+
+@import url('https://rsms.me/inter/inter.css');
+
+html {
+    font-family: 'Inter', sans-serif;
+}
+
+
+/* **********************************************************
+ * Customizing
+ *
+ * changes to default settings like colors, typography,
+ * spacing can be made in default.css
+ *
+ * other custom settings, start below
+ *
+ * ********************************************************** */
+
+* {
+    line-height: 115%;
+    font-weight: 400;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+}
+
+
+@media (orientation: portrait) {
+    * {
+        font-size: 16px;
+    }
+}
