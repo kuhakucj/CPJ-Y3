@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 2 | Visual Harmonics</title>
+    
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="/css/catalog.css" />
+</head>
+<body class="chapter-page">
+
+    <header>
+        <nav class="main__nav-bar">
+            <div class="main__nav-title" style="color: black;">
+                <a href="/index.html" style="color: black;">VISUAL HARMONICS</a>
+            </div>
+            <ul class="main__nav-list">
+                <li class="main__nav-item"><a href="/catalog.html">Catalog</a></li>
+                <li class="main__nav-item"><a href="/about.html">About</a></li>
+            </ul>
+            <div class="main__nav-ham">
+                <span class="main__nav-ham-bar"></span>
+                <span class="main__nav-ham-bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="chapter-hero">
+            <h1 class="chapter-title">CHAPTER 2</h1>
+            <div class="chapter-hero-images">
+                <div class="gallery-item"><img src="/assets/catalog/main/c_exp4.jpg" alt="Dithering"></div>
+                <div class="gallery-item"><img src="/assets/catalog/main/c_exp5.jpg" alt="Blender Input"></div>
+                <div class="gallery-item"><img src="/assets/catalog/main/c_exp6.jpg" alt="NFC Tags"></div>
+                <div class="gallery-item"><img src="/assets/catalog/main/c_exp4.jpg" alt="Noise Gen"></div>
+            </div>
+        </section>
+
+        <section class="experiment-section">
+            <div class="experiment-header-row">
+                <h2 class="experiment-detail-title">EXPERIMENT 2.1</h2>
+            </div>
+            
+            <div class="experiment-content-row">
+                <div class="experiment-description">
+                    <p>
+                        <strong>Concept:</strong> Exploring visual personalization by converting input images into dithered visuals. Simplifies high-resolution data into limited colors and blocks.
+                    </p>
+                    <p>
+                        <strong>Error Codes:</strong> These patterns show what happens when the system uses bad data. The blocks show how unstable input turns into unique visual textures.
+                    </p>
+                    <p>
+                        <strong>Noise Exploration:</strong> Explored Perlin noise and fractal noise. However, standard noise generators were deemed too predictable and bland for the project's aesthetic needs.
+                    </p>
+                </div>
+                <div class="experiment-image">
+                    <img src="/assets/catalog/main/c_exp4.jpg" alt="Dithering Visuals">
+                </div>
+            </div>
+        </section>
+
+        <section class="experiment-section">
+            <div class="experiment-split-header">
+                <div class="experiment-description">
+                    <p>
+                        <strong>Process:</strong> Tested how Blender handles input variables like rotation, speed, or scale to output visuals using Python scripts.
+                    </p>
+                    <p>
+                        <strong>Technical:</strong> Scripts control positioning, color, and geometry of clustered objects, establishing a robust foundation for external sensor data.
+                    </p>
+                    <p>
+                        <strong>Aesthetic:</strong> Designed scalable, abstract visuals that can be customized for any user's personal style.
+                    </p>
+                </div>
+                <div class="experiment-title-right">
+                    <h2 class="experiment-detail-title">EXPERIMENT 2.2</h2>
+                </div>
+            </div>
+            
+            <div class="experiment-gallery gallery-2">
+                <div class="gallery-item">
+                    <img src="/assets/catalog/main/c_exp5.jpg" alt="Blender Abstract Shape">
+                </div>
+                <!-- <div class="gallery-item">
+                    <img src="/assets/catalog/main/c_exp5.jpg" alt="Blender Node Graph">
+                </div> -->
+            </div>
+        </section>
+
+        <section class="experiment-section">
+            <div class="experiment-header-row">
+                <h2 class="experiment-detail-title">EXPERIMENT 2.3</h2>
+            </div>
+            
+            <div class="experiment-content-row reverse">
+                <div class="experiment-text-side">
+                    <div class="experiment-description">
+                        <p>
+                            <strong>Process:</strong> Using NFC tags as physical tokens to switch visual modes instantly.
+                        </p>
+                        <p>
+                            <strong>Technical Setup:</strong> Used a multiplexer (MUX) to handle three NFC readers on a single set of pins, simulating six unique input choices.
+                        </p>
+                        <p>
+                            <strong>Proposed Prototype:</strong> Placing a physical token on the designated surface would instantly load a unique visual scene, allowing for rapid aesthetic switching.
+                        </p>
+                    </div>
+                </div>
+                <div class="experiment-image">
+                    <img src="/assets/catalog/main/c_exp6.jpg" alt="NFC Reader Setup">
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="scroll__top">
+            <a href="#" onclick="scrollToTop()">↑</a>
+        </div>
+    </footer>
+
+    <div id="lightbox"></div>
+    <script src="/js/main.js"></script>
+</body>
+</html>

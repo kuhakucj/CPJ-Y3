@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 5 | Visual Harmonics</title>
+    
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="/css/catalog.css" />
+</head>
+<body class="chapter-page">
+
+    <header>
+        <nav class="main__nav-bar">
+            <div class="main__nav-title" style="color: black;">
+                <a href="/index.html" style="color: black;">VISUAL HARMONICS</a>
+            </div>
+            <ul class="main__nav-list">
+                <li class="main__nav-item"><a href="/catalog.html">Catalog</a></li>
+                <li class="main__nav-item"><a href="/about.html">About</a></li>
+            </ul>
+            <div class="main__nav-ham">
+                <span class="main__nav-ham-bar"></span>
+                <span class="main__nav-ham-bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="chapter-hero">
+            <h1 class="chapter-title">CHAPTER 5</h1>
+            <div class="experiment-wide-image">
+                <img src="/assets/catalog/main/c_exp11.jpg" alt="Piezo Array">
+            </div>
+        </section>
+
+        <section class="experiment-section">
+            <div class="experiment-header-row">
+                <h2 class="experiment-detail-title">EXPERIMENT 5.1</h2>
+            </div>
+            
+            <div class="experiment-content-row">
+                <div class="experiment-description">
+                    <p>
+                        <strong>Circuit:</strong> Stabilized the physical circuit to handle multiple Piezo sensors simultaneously. Organized wiring to prevent signal interference.
+                    </p>
+                    <p>
+                        <strong>Expansion:</strong> Expanded to 5 simultaneous sensors to capture distinct drum areas (center, rim, sides).
+                    </p>
+                    <p>
+                        <strong>Code & Challenges:</strong> The challenge was reading 5 analog signals at high speed. Refined code to identify which sensor was hit in milliseconds. A major issue was the fragility of Piezo cables, requiring careful securing.
+                    </p>
+                </div>
+                <div class="experiment-image">
+                    <img src="/assets/catalog/main/c_exp11.jpg" alt="5 Sensor Array">
+                </div>
+            </div>
+        </section>
+
+        <section class="experiment-section">
+            <div class="experiment-header-row right">
+                <h2 class="experiment-detail-title">EXPERIMENT 5.2</h2>
+            </div>
+            
+            <div class="experiment-stacked-row">
+                <div class="experiment-description">
+                    <p>
+                        <strong>Design:</strong> Exploring surface textures. 3D modeled patterns (ridges, organic waves) to create tactile zones. Created 5 prototypes to test feedback variety.
+                    </p>
+                    <p>
+                        <strong>Function:</strong> Dragging a finger across ridges creates continuous vibration, triggering sustained visual effects rather than single impacts.
+                    </p>
+                    <p>
+                        <strong>Sensor Integration:</strong> Designed a specific slot underneath for the Piezo to fit tight against the surface, ensuring clear vibration pickup.
+                    </p>
+                </div>
+                <div class="experiment-stacked-images">
+                    <div class="gallery-item"><img src="/assets/catalog/main/c_exp12.jpg" alt="3D Printed Texture 1"></div>
+                    <div class="gallery-item"><img src="/assets/catalog/main/c_exp12.jpg" alt="3D Printed Texture 2"></div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="scroll__top">
+            <a href="#" onclick="scrollToTop()">↑</a>
+        </div>
+    </footer>
+
+    <div id="lightbox"></div>
+    <script src="/js/main.js"></script>
+</body>
+</html>

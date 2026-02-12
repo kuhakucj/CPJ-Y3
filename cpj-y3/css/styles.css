@@ -2,10 +2,14 @@
  * add custom styles after imports below
  * ********************************************************** */
 
+@import "custom.css";
 @import "default.css";
 @import "layout.css";
 @import "menu.css";
 @import "queries.css";
+
+
+
 
 /* **********************************************************
  * to import a font, use the @import option, you can find
@@ -13,9 +17,12 @@
  * ********************************************************** */
 
 @import url('https://rsms.me/inter/inter.css');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap');
 
 html {
-    font-family: 'Inter', sans-serif;
+    /* font-family:'Inter', sans-serif; */
+    font-family:'Inter', "DM Serif Display", sans-serif;
+
 }
 
 
@@ -31,7 +38,7 @@ html {
 
 * {
     line-height: 115%;
-    font-weight: 400;
+    /* font-weight: 400; */
 }
 
 body {

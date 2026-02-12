@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 1 | Visual Harmonics</title>
+    
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="/css/catalog.css" />
+</head>
+<body class="chapter-page">
+
+    <header>
+        <nav class="main__nav-bar">
+            <div class="main__nav-title" style="color: black;">
+                <a href="/index.html" style="color: black;">VISUAL HARMONICS</a>
+            </div>
+            <ul class="main__nav-list">
+                <li class="main__nav-item"><a href="/catalog.html">Catalog</a></li>
+                <li class="main__nav-item"><a href="/about.html">About</a></li>
+            </ul>
+            <div class="main__nav-ham">
+                <span class="main__nav-ham-bar"></span>
+                <span class="main__nav-ham-bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="chapter-hero">
+            <h1 class="chapter-title">CHAPTER 1</h1>
+            <div class="experiment-gallery gallery-4">
+                <div class="gallery-item">
+                    <img src="/assets/catalog/main/c_exp1.jpg" alt="Wishing Garden">
+                </div>
+                <div class="gallery-item">
+                    <img src="/assets/catalog/main/c_exp2.jpg" alt="Gyro Sensor">
+                </div>
+                <div class="gallery-item">
+                    <img src="/assets/catalog/main/c_exp3.jpg" alt="Distance Sensor">
+                </div>
+                <div class="gallery-item">
+                    <img src="/assets/catalog/main/c_exp1.jpg" alt="Wishing Garden Detail">
+                </div>
+            </div>
+        </section>
+
+        <section class="chapter-intro">
+            <p class="intro-text">
+                This chapter explores the foundational experiments in interactive web interfaces and sensor-based controls. It documents the transition from screen-based interaction to physical computing gestures.
+            </p>
+        </section>
+
+        <section class="experiment-section">
+            <div class="experiment-header-row">
+                <h2 class="experiment-detail-title">EXPERIMENT 1.1</h2>
+            </div>
+            
+            <div class="experiment-content-row reverse">
+                <div class="experiment-text-side">
+                    <div class="experiment-description">
+                        <p>
+                            <strong>Wishing Garden:</strong> The wishing garden was a project that was mainly focused on how to make a website interactive through the interaction of each wish. This experiment focuses on the new feature of Figma called "Figma Make."
+                        </p>
+                        <p>
+                            <strong>UI Description:</strong> The UI guides users through a simple three-step journey: selecting a persona, planting a wish, and nurturing the garden.
+                        </p>
+                        <p>
+                            <strong>Identity:</strong> Users select a "Clover" avatar that best represents their current emotion to serve as their digital identity.
+                        </p>
+                    </div>
+                    
+                    <div class="experiment-boxes-container">
+                        <div class="experiment-box gradient-dark" style="background-image: url('/assets/catalog/main/c_exp1.jpg');">
+                            <div class="experiment-header">
+                                <span class="experiment-title">FIGMA PROTOTYPE</span>
+                                <div class="experiment-chevron">
+                                    <svg viewBox="0 0 24 24"><path d="M6 9 L12 15 L18 9"/></svg>
+                                </div>
+                            </div>
+                            <div class="experiment-content">
+                                <p>Explored Figma Make features to create interactive states without code.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="experiment-image">
+                    <img src="/assets/catalog/main/c_exp1.jpg" alt="Wishing Garden Interface">
+                </div>
+            </div>
+        </section>
+
+        <section class="experiment-section">
+            <div class="experiment-header-row centered">
+                <h2 class="experiment-detail-title">EXPERIMENT 1.2</h2>
+            </div>
+            
+            <div class="experiment-content-row">
+                <div class="experiment-description">
+                    <p>
+                        <strong>Process:</strong> This experiment used an MPU6050 gyroscope connected to a microcontroller to track hand movements in real-time. By reading the X, Y, and Z axis rotation, the device translates physical tilting and turning gestures into digital data.
+                    </p>
+                    <p>
+                        <strong>Interaction:</strong> This mimics the feeling of holding a physical object. Instead of using a mouse, the user tilts their wrist to change the perspective. It removes the need for buttons, making navigation feel intuitive and tangible.
+                    </p>
+                </div>
+                
+                <div class="experiment-image">
+                    <img src="/assets/catalog/main/c_exp2.jpg" alt="Gyro Sensor Setup">
+                </div>
+            </div>
+            
+            <div class="experiment-text-block">
+                <p>
+                    <strong>Connectivity:</strong> The original goal was wireless freedom, but connections introduced too much latency. I switched to a wired Arduino setup to fix reliability issues and control visuals smoothly without signal drops.
+                </p>
+            </div>
+            
+            <div class="experiment-wide-image">
+                <img src="/assets/catalog/main/c_exp2.jpg" alt="Wiring Detail MPU6050">
+            </div>
+        </section>
+
+        <section class="experiment-section">
+            <div class="experiment-header-row right">
+                <h2 class="experiment-detail-title">EXPERIMENT 1.3</h2>
+            </div>
+            
+            <div class="experiment-stacked-row">
+                <div class="experiment-description">
+                    <p>
+                        <strong>Process:</strong> Using an ultrasonic sensor to measure distance via sound waves. It acts like a digital ruler, detecting hand hover height in real-time.
+                    </p>
+                    <p>
+                        <strong>Storytelling:</strong> I connected distance data to the blooming of a digital flower. As the hand moves closer, the flower reacts, allowing users to physically nurture the narrative.
+                    </p>
+                    <p>
+                        <strong>Narrative Context:</strong> Used the story of Ophelia to test emotional complexity. The goal was to see if distance sensors could communicate nuanced states like melancholy instead of just on/off triggers.
+                    </p>
+                </div>
+                
+                <div class="experiment-stacked-images">
+                    <div class="gallery-item">
+                        <img src="/assets/catalog/main/c_exp3.jpg" alt="Distance Sensor Prototype">
+                    </div>
+                    <!-- <div class="gallery-item">
+                        <img src="/assets/catalog/main/c_exp3.jpg" alt="Ophelia Bloom Visualization">
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="scroll__top">
+            <a href="#" onclick="scrollToTop()">↑</a>
+        </div>
+    </footer>
+
+    <div id="lightbox"></div>
+
+    <script src="/js/main.js"></script>
+</body>
+</html>

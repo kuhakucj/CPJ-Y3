@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Week 03 - Visual Harmonics</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+
+  <link rel="stylesheet" type="text/css" href="../../css/styles.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/custom.css" />
+</head>
+
+<body>
+
+  <header>
+    <nav class="main__nav-bar">
+      <ul class="main__nav-title">
+        <li><a href="../../index.html">Visual Harmonics</a></li>
+        <!-- <li class="mobile__hide"><a href="/about">Carissa R. J.</a></li> -->
+      </ul>
+      <ul class="main__nav-list">
+        <li class="main__nav-item"><a href="../../index.html">overview</a></li>
+        <li class="main__nav-item"><a href="/repository">repository</a></li>
+        <li class="main__nav-item"><a href="/about">about</a></li>
+      </ul>
+      <div class="main__nav-ham">
+        <span class="main__nav-ham-bar"></span>
+        <span class="main__nav-ham-bar"></span>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <article class="editorial-container">
+
+      <div class="editorial-hero-img">
+        <!-- <img src="/assets/images/term-1/022-3.png" class="zoom" alt="Mindmap showing initial chaotic ideas"> -->
+
+        <video class="lazy" autoplay muted playsinline loop controls preload="none" width="100%" poster="">
+          <source data-src="/assets/images/term-1/03-1.mp4" type="video/mp4" />
+        </video>
+      </div>
+
+      <div class="editorial-row">
+        
+        <div class="editorial-text">
+          <p>
+            I was still lost aaaaaaaaaaa at the start of this week, still trying to figure out what exactly I was making and why.
+          </p>
+          <p>
+            Last weekend I experienced the VR 'echoes by the bay' where people drew their own interpretations of a boat. It connected back to this idea I had about making people's items feel alive somehow. It also reminded me of last year's 'Heal' exhibition where artists transformed objects with sad stories into new artifacts. I was thinking: could computation do something similar?
+          </p>
+          <p>
+            For our dissertation, we had to choose research methods. I chose Critical Journaling and Case Study. The workshop with Shumin helped clarify Critical Journaling as practice-based research: documenting the messy, iterative process of making, contextualizing, and reflecting.
+          </p>
+        </div>
+
+        <div class="editorial-title-wrapper">
+          <h1 class="big-serif-title">WEEK 3</h1>
+          
+          <div class="editorial-wide-stack">
+            
+            <div class="experiment-box gradient-light dark-text" style="background-image: url('/assets/images/term-1/022-1.jpeg');">
+                <div class="experiment-header">
+                    <span class="experiment-title">MIND MAPPING: VALIDATION</span>
+                    <div class="experiment-chevron">
+                        <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" stroke="black" stroke-width="2" fill="none"/></svg>
+                    </div>
+                </div>
+                <div class="experiment-content">
+                    <h3>In-Class Exercise</h3>
+                    <p>The sticker feedback showed a pattern: people were interested in the physical-digital interaction aspect. This helped validate and push me toward the ESP32 experiments.</p>
+                </div>
+            </div>
+
+            <!-- <div class="experiment-box gradient-dark" style="background-image: url('/assets/images/term-1/03-3.jpg');">
+                <div class="experiment-header">
+                    <span class="experiment-title">DAMARIS: CO-CREATION PIVOT</span>
+                    <div class="experiment-chevron">
+                        <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" stroke="white" stroke-width="2" fill="none"/></svg>
+                    </div>
+                </div>
+                <div class="experiment-content">
+                    <h3>Focus Area</h3>
+                    <p>Key question: "How might we collaborate in a spatial setting?" Keywords: Co-creation, participatory design, tool making.</p>
+                </div>
+            </div> -->
+
+             <div class="experiment-box gradient-dark" style="background-image: url('/assets/images/term-1/03-4.jpg');">
+                <div class="experiment-header">
+                    <span class="experiment-title">ANDREAS: THE THREE PILLARS</span>
+                    <div class="experiment-chevron">
+                        <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" stroke="white" stroke-width="2" fill="none"/></svg>
+                    </div>
+                </div>
+                <div class="experiment-content">
+                    <h3>Final Concepts</h3>
+                    <p>The core pillars we settled on: Interactivity, People, and Tangible. Memory was cut, proving the focus is the shared physical experience.</p>
+                </div>
+            </div>
+
+          </div> </div>
+      </div>
+
+      <div class="editorial-row reverse-mobile">
+        <div class="editorial-feature-img">
+          <a href="https://www.rokoko.com/products/smartgloves?_gl=1*1282vl2*_up*MQ..*_ga*MTIwMzg3MjMxOC4xNzY0NTYyMDIy*_gs*MQ..&gclid=CjwKCAiA86_JBhAIEiwA4i9Ju3i7TypqtBrY_sUsrBKTwn-uXp-KKT7TfoiYc9oH0_3nVds5KUZ8NRoCyzgQAvD_BwE&gbraid=0AAAAADPpNPDbIu1B6BFgZitmt4d-eDOx9" target="_blank">
+            <img src="/assets/images/term-1/022-2.png" class="zoom" alt="Marker set used during finger motion capture">
+          </a>
+        </div>
+        
+        <div class="editorial-text">
+          <p>
+            After the pillars exercise, I had an initial hypothesis: to create a tool involving people. I was interested in making wearables or motion capture suits to control the digital world—a co-creation tool in a spatial setting.
+          </p>
+          <p>
+            I chose to use the <strong>ESP32</strong>, which is stronger than the Arduino UNO and has Wifi/Bluetooth. Since I settled on 'People' and 'Collaboration,' the wireless capability allows multiple users to interact in the same physical space, fitting the co-creation collaborative concept.
+          </p>
+          <p>
+            My initial experiment idea was to use the ESP32 to create an interactive digital space where 3D memories could be stored and manipulated, inspired by how museums use 3D scanning to preserve artifacts.
+          </p>
+        </div>
+      </div>
+
+      <div class="editorial-row">
+        <div class="editorial-text">
+          <p>
+            I was inspired by how I personally like to scan my surroundings for memory. Museums also use 3D scanning to preserve artifacts rather than keeping physical objects which might decay.
+          </p>
+          <p>
+            There was a lot I guess just words words words because I was reading so much theory (cybernetics, speculation) but not translating it into actual experiments and that disconnect was making me even more confused about what I was supposed to be doing.
+          </p>
+          <p>
+            In the end, this week was about forcing a solid foundation. The main keywords were: Lost, Help, AAA, and finally, Articulation.
+          </p>
+        </div>
+
+        <div class="editorial-feature-img">
+          <a href="https://artsandculture.google.com/story/scan-the-world-scan-the-world/egWRnanxkLB0zg?hl=en" target="_blank">
+            <img src="/assets/images/term-1/022-5.jpg" class="zoom" alt="White-light scanner and artifact for preservation">
+          </a>
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <footer>
+    <div class="prev__next">
+      <ul>
+        <li><a href="./week-2.html" id="go-prev">prev (week 02)</a></li>
+        <li><a href="../../index.html">menu</a></li>
+        <li><a href="./week-4.html" id="go-next">next (week 04)</a></li>
+      </ul>
+    </div>
+    <div class="scroll__top"><a href="javascript:scrollToTop();">↑</a></div>
+  </footer>
+
+  <div id="lightbox"></div>
+  <script src="../../js/main.js"></script>
+</body>
+</html>

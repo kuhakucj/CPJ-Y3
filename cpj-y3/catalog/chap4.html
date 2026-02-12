@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chapter 4 | Visual Harmonics</title>
+    
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" type="text/css" href="/css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="/css/catalog.css" />
+</head>
+<body class="chapter-page">
+
+    <header>
+        <nav class="main__nav-bar">
+            <div class="main__nav-title" style="color: black;">
+                <a href="/index.html" style="color: black;">VISUAL HARMONICS</a>
+            </div>
+            <ul class="main__nav-list">
+                <li class="main__nav-item"><a href="/catalog.html">Catalog</a></li>
+                <li class="main__nav-item"><a href="/about.html">About</a></li>
+            </ul>
+            <div class="main__nav-ham">
+                <span class="main__nav-ham-bar"></span>
+                <span class="main__nav-ham-bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="chapter-hero">
+            <h1 class="chapter-title">CHAPTER 4</h1>
+            <div class="experiment-wide-image">
+                <img src="/assets/catalog/main/c_exp9.jpg" alt="Capacitive Touch Grid">
+            </div>
+        </section>
+
+        <section class="experiment-section">
+            <div class="experiment-header-row">
+                <h2 class="experiment-detail-title">EXPERIMENT 4.1</h2>
+            </div>
+            
+            <div class="experiment-content-row">
+                <div class="experiment-description">
+                    <p>
+                        <strong>Process:</strong> Explored the MPR121 sensor to detect skin contact without pressure. Created multiple touch zones on a non-conductive surface.
+                    </p>
+                    <p>
+                        <strong>Construction:</strong> The prototype grid used copper tape wired to the breakout board, creating a dense matrix of touch zones.
+                    </p>
+                    <p>
+                        <strong>Conclusion:</strong> Technically difficult. Custom wiring and capacitive sensitivity led to high noise and unstable data. The concept is strong, but execution requires refinement for reliability.
+                    </p>
+                </div>
+                <div class="experiment-image">
+                    <img src="/assets/catalog/main/c_exp9.jpg" alt="Copper Tape Grid">
+                </div>
+            </div>
+        </section>
+
+        <section class="experiment-section">
+            <div class="experiment-header-row right">
+                <h2 class="experiment-detail-title">EXPERIMENT 4.2</h2>
+            </div>
+            
+            <div class="experiment-staggered">
+                <div class="staggered-row text-left">
+                    <div class="experiment-description">
+                        <p><strong>Pivot:</strong> Shifted to Piezo sensors, which detect vibration and physical impact. Unlike buttons, Piezo outputs a continuous analog value proportional to hit force.</p>
+                        <p><strong>Calibration:</strong> Tested resistor values to "tune" the sensor. High resistance = noise; low resistance = dead signal.</p>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="/assets/catalog/main/c_exp10.jpg" alt="Piezo Sensor">
+                    </div>
+                </div>
+                
+                <div class="staggered-row image-left">
+                    <div class="experiment-description">
+                        <p><strong>Results:</strong> Discovered that a <strong>10M ohm resistor</strong> was the perfect solution. It maximized voltage reading while keeping the signal clean, allowing detection of subtle vibrations.</p>
+                    </div>
+                    <!-- <div class="gallery-item">
+                        <img src="/assets/catalog/main/c_exp10.jpg" alt="10M Ohm Resistor Setup">
+                    </div> -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="scroll__top">
+            <a href="#" onclick="scrollToTop()">↑</a>
+        </div>
+    </footer>
+
+    <div id="lightbox"></div>
+    <script src="/js/main.js"></script>
+</body>
+</html>

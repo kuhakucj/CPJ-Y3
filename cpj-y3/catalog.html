@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalogue of Making | Visual Harmonics</title>
+    
+
+
+    <link rel="stylesheet" type="text/css" href="./css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="./css/catalog.css" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+
+</head>
+<body class="catalog-page">
+
+    <!-- Video Background - Fixed behind everything -->
+    <div class="catalog-video-bg">
+        <video autoplay muted loop playsinline>
+            <source src="./assets/videos/catalog.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <!-- Page Wrapper -->
+    <div class="catalog-page-wrapper">
+
+        <!-- HERO SECTION -->
+        <section class="catalog-hero">
+            
+            <!-- Logo (Star) - Top Left -->
+            <div class="catalog-logo">
+                <!-- Replace with your star SVG or img -->
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M50 0 C52 40, 52 40, 100 50 C52 52, 52 52, 50 100 C48 52, 48 52, 0 50 C48 40, 48 40, 50 0 Z" fill="white"/>
+                </svg>
+            </div>
+            
+            <!-- Header Text -->
+            <span class="catalog-header-text">Visual Harmonics</span>
+            
+            <!-- Main Title - Staggered Left/Right -->
+            <div class="catalog-title-container">
+                <span class="catalog-title-line line-catalogue">Catalogue</span>
+                <span class="catalog-title-line line-of">[of]</span>
+                <span class="catalog-title-line line-making">Making</span>
+            </div>
+            
+            <!-- Scroll Arrow -->
+            <div class="catalog-scroll-arrow" id="scroll-arrow">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 9 L12 15 L18 9" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            
+        </section>
+
+        <!-- CONTENT SECTION - Over Video -->
+        <section class="catalog-content" id="content">
+            
+            <!-- Intro Text Block -->
+            <div class="catalog-intro">
+                <p>The Catalogue of Making is a series of experiments and prototypes that explores real-time visuals controlled by a physical interface. These interfaces are built with performers in mind, with the intent of finding out the most seamless integration that could be used in a live setting.
+                </p>
+
+                <p>It documents the search for a visual style that is responsive and high-quality. This ranges from using "dithering" to personalize visuals with input images , to utilizing Blender simulations and the EEVEE engine to generate complex, abstract visuals that can react in real-time.</p>
+
+
+                <p>It details the testing of different sensors to capture specific types of movement. This includes using Gyro sensors to track rotation and tilting , Distance sensors to detect hand hovering , and Piezo sensors to pick up the vibration and force of a drum hit.</p>
+
+            </div>
+            
+        </section>
+
+        <!-- EXPERIMENTS SECTION - Solid Black Background -->
+        <section class="experiments-section">
+            
+            <!-- Sticky Header -->
+            <div class="experiments-header">
+                <div class="view-mode-toggle">
+                    <span class="view-mode-label">View Mode</span>
+                    
+                    <!-- Grid View Button -->
+                    <button class="view-mode-btn active" id="grid-view-btn" title="Grid View">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="3" y="3" width="7" height="7"/>
+                            <rect x="14" y="3" width="7" height="7"/>
+                            <rect x="3" y="14" width="7" height="7"/>
+                            <rect x="14" y="14" width="7" height="7"/>
+                        </svg>
+                    </button>
+                    
+                    <!-- List View Button -->
+                    <button class="view-mode-btn" id="list-view-btn" title="List View">
+                        <svg viewBox="0 0 24 24">
+                            <line x1="3" y1="6" x2="21" y2="6"/>
+                            <line x1="3" y1="12" x2="21" y2="12"/>
+                            <line x1="3" y1="18" x2="21" y2="18"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <span class="experiments-title">Experiments</span>
+                
+                <div class="experiments-header-right"></div>
+            </div>
+
+            <!-- Experiments Container -->
+            <div class="experiments-container">
+    
+                <div class="experiments-grid" id="experiments-grid">
+                    
+                    <a href="/catalog/chap1.html" class="experiment-card" data-img="./assets/catalog/main/c_exp1.jpg">
+                        <img src="./assets/catalog/main/c_exp1.jpg" alt="Experiment 1.1">
+                        <span class="experiment-card-label">Experiment 1.1</span>
+                    </a>
+                    <a href="./catalog/chap1.html" class="experiment-card" data-img="./assets/catalog/main/c_exp2.jpg">
+                        <img src="./assets/catalog/main/c_exp2.jpg" alt="Experiment 1.2">
+                        <span class="experiment-card-label">Experiment 1.2</span>
+                    </a>
+                    <a href="./catalog/chap1.html" class="experiment-card" data-img="./assets/catalog/main/c_exp3.jpg">
+                        <img src="./assets/catalog/main/c_exp3.jpg" alt="Experiment 1.3">
+                        <span class="experiment-card-label">Experiment 1.3</span>
+                    </a>
+            
+                    <a href="./catalog/chap2.html" class="experiment-card" data-img="./assets/catalog/main/c_exp4.jpg">
+                        <img src="./assets/catalog/main/c_exp4.jpg" alt="Experiment 2.1">
+                        <span class="experiment-card-label">Experiment 2.1</span>
+                    </a>
+                    <a href="./catalog/chap2.html" class="experiment-card" data-img="./assets/catalog/main/c_exp5.jpg">
+                        <img src="./assets/catalog/main/c_exp5.jpg" alt="Experiment 2.2">
+                        <span class="experiment-card-label">Experiment 2.2</span>
+                    </a>
+                    <a href="./catalog/chap2.html" class="experiment-card" data-img="./assets/catalog/main/c_exp6.jpg">
+                        <img src="./assets/catalog/main/c_exp6.jpg" alt="Experiment 2.3">
+                        <span class="experiment-card-label">Experiment 2.3</span>
+                    </a>
+            
+                    <a href="./catalog/chap3.html" class="experiment-card" data-img="./assets/catalog/main/c_exp7.jpg">
+                        <img src="./assets/catalog/main/c_exp7.jpg" alt="Experiment 3.1">
+                        <span class="experiment-card-label">Experiment 3.1</span>
+                    </a>
+                    <a href="./catalog/chap3.html" class="experiment-card" data-img="./assets/catalog/main/c_exp8.jpg">
+                        <img src="./assets/catalog/main/c_exp8.jpg" alt="Experiment 3.2">
+                        <span class="experiment-card-label">Experiment 3.2</span>
+                    </a>
+            
+                    <a href="./catalog/chap4.html" class="experiment-card" data-img="./assets/catalog/main/c_exp9.jpg">
+                        <img src="./assets/catalog/main/c_exp9.jpg" alt="Experiment 4.1">
+                        <span class="experiment-card-label">Experiment 4.1</span>
+                    </a>
+                    <a href="./catalog/chap4.html" class="experiment-card" data-img="./assets/catalog/main/c_exp10.jpg">
+                        <img src="./assets/catalog/main/c_exp10.jpg" alt="Experiment 4.2">
+                        <span class="experiment-card-label">Experiment 4.2</span>
+                    </a>
+            
+                    <a href="./catalog/chap5.html" class="experiment-card" data-img="./assets/catalog/main/c_exp11.jpg">
+                        <img src="./assets/catalog/main/c_exp11.jpg" alt="Experiment 5.1">
+                        <span class="experiment-card-label">Experiment 5.1</span>
+                    </a>
+                    <a href="./catalog/chap5.html" class="experiment-card" data-img="./assets/catalog/main/c_exp12.jpg">
+                        <img src="./assets/catalog/main/c_exp12.jpg" alt="Experiment 5.2">
+                        <span class="experiment-card-label">Experiment 5.2</span>
+                    </a>
+                </div>
+            
+                <div class="experiments-list" id="experiments-list">
+                    <div class="experiments-list-items">
+                        <a href="./catalog/chap1.html" class="experiment-list-item active" data-img="./assets/catalog/main/c_exp1.jpg">1.1 Experiment</a>
+                        <a href="./catalog/chap1.html" class="experiment-list-item" data-img="./assets/catalog/main/c_exp2.jpg">1.2 Experiment</a>
+                        <a href="./catalog/chap1.html" class="experiment-list-item" data-img="./assets/catalog/main/c_exp3.jpg">1.3 Experiment</a>
+                        
+                        <a href="./catalog/chap2.html" class="experiment-list-item" data-img="./assets/catalog/main/c_exp4.jpg">2.1 Experiment</a>
+                        <a href="./catalog/chap2.html" class="experiment-list-item" data-img="./assets/catalog/main/c_exp5.jpg">2.2 Experiment</a>
+                        <a href="./catalog/chap2.html" class="experiment-list-item" data-img="./assets/catalog/main/c_exp6.jpg">2.3 Experiment</a>
+                        
+                        <a href="./catalog/chap3.html" class="experiment-list-item" data-img="./assets/catalog/main/c_exp7.jpg">3.1 Experiment</a>
+                        <a href="./catalog/chap3.html" class="experiment-list-item" data-img="./assets/catalog/main/c_exp8.jpg">3.2 Experiment</a>
+                        
+                        <a href="./catalog/chap4.html" class="experiment-list-item" data-img="./assets/catalog/main/c_exp9.jpg">4.1 Experiment</a>
+                        <a href="./catalog/chap4.html" class="experiment-list-item" data-img="./assets/catalog/main/c_exp10.jpg">4.2 Experiment</a>
+                        
+                        <a href="./catalog/chap5.html" class="experiment-list-item" data-img="./assets/catalog/main/c_exp11.jpg">5.1 Experiment</a>
+                        <a href="./catalog/chap5.html" class="experiment-list-item" data-img="./assets/catalog/main/c_exp12.jpg">5.2 Experiment</a>
+                    </div>
+                    <div class="experiments-list-preview">
+                        <img id="list-preview-img" src="./assets/catalog/main/c_exp1.jpg" alt="Experiment Preview">
+                    </div>
+                </div>
+            
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Your main.js - add catalog.js code to it -->
+    <script src="./js/main.js"></script>
+
+</body>
+</html>

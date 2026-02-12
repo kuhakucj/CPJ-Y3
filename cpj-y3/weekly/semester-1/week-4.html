@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Week 04 - Visual Harmonics</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+
+  <link rel="stylesheet" type="text/css" href="../../css/styles.css" />
+  <link rel="stylesheet" type="text/css" href="../../css/custom.css" />
+</head>
+
+<body>
+
+  <header>
+    <nav class="main__nav-bar">
+      <ul class="main__nav-title">
+        <li><a href="../../index.html">Visual Harmonics</a></li>
+        <!-- <li class="mobile__hide"><a href="/about">Carissa R. J.</a></li> -->
+      </ul>
+      <ul class="main__nav-list">
+        <li class="main__nav-item"><a href="../../index.html">overview</a></li>
+        <li class="main__nav-item"><a href="/repository">repository</a></li>
+        <li class="main__nav-item"><a href="/about">about</a></li>
+      </ul>
+      <div class="main__nav-ham">
+        <span class="main__nav-ham-bar"></span>
+        <span class="main__nav-ham-bar"></span>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <article class="editorial-container">
+    <div class="editorial-hero-img">
+      <img src="/assets/images/term-1/03-12.jpg" alt="Hero image for week 4" width="100%" />
+    </div>
+
+      <div class="editorial-row">
+        
+        <div class="editorial-text">
+          <p>
+            This was one of the more intense weeks for me. I was juggling the Figma competition, three main FYP experiments, a presentation diagram, and a Designathon organised by NUS to reduce HIV Stigma. I have no idea how I thought I could handle all of this at once, but here we are.
+          </p>
+          <p>
+            Tanisha invited me to join a Figma Make competition. We had lots of ideas (storytelling, puzzle games) but realized they were impossible for a 10-day competition. I suggested focusing on one core, simple interaction rather than a full narrative experience.
+          </p>
+          <p>
+            We encountered mad complications using the new Figma Make AI. Even after giving it our design library, it wouldn't recognize components or interpret designs correctly. It made me realize that sometimes, even new tools are not as convenient as they seem.
+          </p>
+        </div>
+
+        <div class="editorial-title-wrapper">
+          <h1 class="big-serif-title">WEEK 4</h1>
+          
+          <div class="editorial-wide-stack">
+            
+            <div class="experiment-box gradient-dark" style="background-image: url('/assets/images/term-1/03-3.jpeg');">
+                <div class="experiment-header">
+                    <span class="experiment-title">FIGMA: TEAM BALANCE</span>
+                    <div class="experiment-chevron">
+                        <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" stroke="black" stroke-width="2" fill="none"/></svg>
+                    </div>
+                </div>
+                <div class="experiment-content">
+                    <h3>Team Dynamics</h3>
+                    <p>There was a hard balance executing everything in a short time with clashing ideas (Yerin vs. Tanisha). I tried to be the balancer, suggesting we focus on simpler, feasible interactions.</p>
+                </div>
+            </div>
+
+            <div class="experiment-box gradient-dark" style="background-image: url('/assets/images/term-1/03-4.jpeg');">
+                <div class="experiment-header">
+                    <span class="experiment-title">FYP: ESP32 FAILURE</span>
+                    <div class="experiment-chevron">
+                        <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" stroke="white" stroke-width="2" fill="none"/></svg>
+                    </div>
+                </div>
+                <div class="experiment-content">
+                    <h3>Hardware Troubleshooting</h3>
+                    <p>The ESP32 microcontroller would not connect stably to my Mac (USB-C issues). I had to switch to Arduino UNO just to get the gyro sensor working.</p>
+                </div>
+            </div>
+
+             <div class="experiment-box gradient-dark" style="background-image: url('/assets/images/term-1/03-10.jpg');">
+                <div class="experiment-header">
+                    <span class="experiment-title">SIDE PROJECT: DESIGNATHON</span>
+                    <div class="experiment-chevron">
+                        <svg viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" stroke="white" stroke-width="2" fill="none"/></svg>
+                    </div>
+                </div>
+                <div class="experiment-content">
+                    <h3>NUS Collaboration</h3>
+                    <p>I joined the Designathon to reduce HIV Stigma and won a special mention. It provided good experience applying existing behaviors to solve problems.</p>
+                </div>
+            </div>
+
+          </div> </div>
+      </div>
+
+      <div class="editorial-row reverse-mobile">
+        <div class="editorial-feature-img">
+          <img src="/assets/images/term-1/03-19.jpg" class="zoom" alt="Gyro Sensor (MPU 6050) connected to Arduino UNO">
+        </div>
+        
+        <div class="editorial-text">
+          <p>
+            On my main experiment, I really wanted to use the ESP32 for the collaborative, wireless idea. The technical failure was frustrating, but I gave a special mention to Kuriosity for helping me with some gyro sensor connections.
+          </p>
+          <p>
+            I had a vision from my previous idea on preserving memory: scanning a moment in 3D and making it interactable in real time. I knew rendering a 3D scan while reading sensor data (to control the camera angle, for instance) would be heavy on the processing power, but I wanted to try it out.
+          </p>
+          <p>
+            Alas, the initial gyro sensor setup wouldn't work, and I had a presentation the next day. I decided it would be better to start a new experiment that was guaranteed to function, keeping the Gyro Sensor (MPU 6050) for a future iteration.
+          </p>
+        </div>
+      </div>
+
+      <div class="editorial-row">
+        <div class="editorial-text">
+          <p>
+            So then came the final experiment which used the ultrasonic sensor (HC-SR04). This one was more straightforward: measure distance and use that to control something in the digital space. The sensor setup involves key components like a Sonar Sensor, Arduino Board, and Terminal connection, It was less ambitious than the gyro setup but at least it would actually work for the presentation.
+          </p>
+          <p>
+            We were trying so hard to articulate what exactly I wanted to do, so we decided to simplify it: instead of trying to explain the whole philosophical framework about memory, just show: sensor detects distance, digital thing responds. Keep it functional first, meaning second.
+          </p>
+          <p>
+            Process keywords for the week were: Time Pressure, Team Dynamics, Tool Limitations, and Hardware Troubleshooting. The focus shifted purely to making rather than thinking over and over again.
+          </p>
+        </div>
+
+        <div class="editorial-feature-img">
+          <img src="/assets/images/term-1/03-4.jpeg" class="zoom" alt="Ultrasonic distance sensor HC-SR04 connected for testing">
+        </div>
+      </div>
+
+    </article>
+  </main>
+
+  <footer>
+    <div class="prev__next">
+      <ul>
+        <li><a href="./week-3.html" id="go-prev">prev (week 03)</a></li>
+        <li><a href="../../index.html">overview</a></li>
+        <li><a href="./week-5.html" id="go-next">next (week 05)</a></li>
+      </ul>
+    </div>
+    <div class="scroll__top"><a href="javascript:scrollToTop();">↑</a></div>
+  </footer>
+
+  <div id="lightbox"></div>
+  <script src="../../js/main.js"></script>
+</body>
+
+</html>

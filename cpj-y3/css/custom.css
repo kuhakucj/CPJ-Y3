@@ -1,0 +1,1804 @@
+/* ========================================
+   CUSTOM.CSS - MERGED VERSION
+   Contains original styles + new dark theme + glitch animation
+   ======================================== */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ************************************************************
+ * 
+ *    1. DARK THEME OVERRIDES
+ * 
+ * ************************************************************ */
+
+ :root {
+    --color-bg: #000;
+    --color-fg: #fff;
+    --color-header-bg: #000;
+    --color-header-fg: #fff;
+    --color-link: #fff;
+    --color-link-hover: rgba(255,255,255,0.7);
+    --color-nav-link: #fff;
+    --color-nav-link-hover: rgba(255,255,255,0.7);
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+}
+
+header {
+    background-color: var(--color-bg);
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ************************************************************
+ * 
+ *    2. NAVIGATION
+ * 
+ * ************************************************************ */
+
+.main__nav-bar ul li a {
+    color: var(--color-fg);
+    font-style: italic;
+}
+
+.main__nav-title a {
+    color: var(--color-fg);
+}
+
+/* Navigation logo placeholder */
+.nav-logo {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: var(--color-fg);
+    flex-shrink: 0;
+}
+
+/* Header hide/show on scroll */
+header {
+    transition: transform 0.3s ease;
+}
+
+header.header-hidden {
+    transform: translateY(-100%);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ========================================
+   MAGAZINE / EDITORIAL LAYOUT STYLES (V2)
+   ======================================== */
+
+/* 1. The Container */
+.editorial-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 2rem 8rem 2rem;
+}
+
+/* 2. The Hero Image (Top black box in screenshot) */
+.editorial-hero-img {
+    width: 100%;
+    height: 60vh;
+    margin-bottom: 6rem;
+    overflow: hidden;
+    background-color: #0a0a0a; /* Fallback color */
+}
+
+.editorial-hero-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+}
+
+/* 3. The Grid System (Zig-Zag) */
+.editorial-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-bottom: 8rem; /* More breathing room between sections */
+    align-items: start; /* Align to top so big title doesn't push text down */
+}
+
+/* 4. Typography Updates */
+.editorial-text p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+    text-align: left; /* CHANGED: Left aligned as requested */
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* 5. The Big Title (WEEK 1) */
+.editorial-title-wrapper {
+    display: flex;
+    flex-direction: column;
+    /* Ensure it aligns with the top of the text column */
+    margin-top: -0.8rem; 
+}
+
+.big-serif-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(5rem, 12vw, 10rem); /* Massive responsive text */
+    line-height: 0.8;
+    text-transform: uppercase;
+    margin-bottom: 3rem;
+    color: var(--color-fg);
+    letter-spacing: -0.03em;
+}
+
+/* 6. NEW: The Wide Image Stack (Replaces Deco Bars) */
+.editorial-wide-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.editorial-wide-img {
+    width: 100%;
+    height: 90px; /* Fixed height to look like long bars */
+    overflow: hidden;
+    background-color: #1a1a1a; /* Placeholder color */
+}
+
+.editorial-wide-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.editorial-wide-img:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+/* 7. Square Images */
+.editorial-square-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background-color: #1a1a1a;
+    margin-top: 0.5rem; /* Slight alignment tweak */
+}
+
+.editorial-square-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.editorial-square-img:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.03);
+}
+
+/* 8. Mobile adjustments */
+@media (max-width: 768px) {
+    .editorial-container {
+        padding: 2rem 1.5rem 4rem 1.5rem;
+    }
+    .editorial-row {
+        grid-template-columns: 1fr; /* Stack vertically */
+        gap: 3rem;
+        margin-bottom: 4rem;
+    }
+    
+    .big-serif-title {
+        margin-bottom: 1.5rem;
+        margin-top: 0;
+    }
+    
+    /* Fix order so images don't get lost above text on mobile */
+    .editorial-row.reverse-mobile .editorial-square-img {
+        order: -1; 
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ************************************************************
+ * 
+ *    3. CONTENT WRAPPER STYLES
+ * 
+ * ************************************************************ */
+
+/* Content now stays centered and constrained */
+.content-wrapper {
+    max-width: 1100px;  /* No more edge-to-edge! */
+    margin: 0 auto;     /* Centers it */
+    padding: 0 3rem;    /* Side spacing */
+}
+
+/* Proper two-column grid */
+.two-column-section {
+    display: grid !important;
+    grid-template-columns: 55% 45% !important;
+}
+
+/* Preventing flex conflicts */
+.two-column-section .column-left,
+.two-column-section .column-right {
+    display: block !important;
+    flex: none !important;
+}
+
+
+.column-left p,
+.column-right p {
+    margin: 3rem !important;  /* 32px automatic space */
+}
+
+/* FORCE spacing for ALL elements */
+.column-left > *,
+.column-right > * {
+    margin: 2rem !important;
+}
+
+/* EXCEPT experiment boxes - they need no margin interference */
+.column-right > .experiment-box {
+    margin: 0 0 1rem 0 !important; /* Only 1rem bottom margin */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ************************************************************
+ * 
+ *    4. HERO SECTION
+ * 
+ * ************************************************************ */
+
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Fullscreen Background Images */
+.hero-bg-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.hero-bg-group {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s ease;
+}
+
+.hero-bg-group.active {
+    opacity: 1;
+}
+
+.hero-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.hero-bg-image.active {
+    opacity: 0.6;
+}
+
+/* Video background support */
+.hero-bg-video video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+/* Content Overlay */
+.hero-content-overlay {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--spacing-l) var(--spacing-m);
+}
+
+/* Week preview image transition */
+#week-preview-img {
+    transition: opacity 0.2s ease;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ************************************************************
+ * 
+ *    5. GLITCH TITLE ANIMATION
+ * 
+ * ************************************************************ */
+
+.glitch-title-container {
+    margin-bottom: var(--spacing-l);
+}
+
+.title-line {
+    display: block;
+    color: var(--color-fg);
+    font-size: clamp(3rem, 12vw, 9rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    line-height: 0.95;
+    font-family: 'Inter', "DM Serif Display", sans-serif;
+    /* font-family: 'Inter', sans-serif; */
+
+}
+
+.title-line:nth-child(2) {
+    margin-left: 10%;
+}
+
+/* Letter animation base styles */
+.letter {
+    display: inline-block;
+    opacity: 0;
+    position: relative;
+    transition: font-family 0.1s;
+}
+
+.letter.visible {
+    opacity: 1;
+}
+
+.letter.glitching {
+    font-family: 'Inter', "DM Serif Display", sans-serif;
+    font-weight: 400;
+}
+
+.letter.glitching::before,
+.letter.glitching::after {
+    content: attr(data-char);
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+}
+
+.letter.glitching::before {
+    color: rgb(6, 24, 188);
+    animation: glitch-1 0.2s steps(2) infinite;
+    clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+}
+
+.letter.glitching::after {
+    color: rgb(222, 3, 105);
+    animation: glitch-2 0.3s steps(2) infinite reverse;
+    clip-path: polygon(0 55%, 100% 55%, 100% 100%, 0 100%);
+}
+
+@keyframes glitch-1 {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 1px); }
+    40% { transform: translate(2px, -1px); }
+    60% { transform: translate(-1px, 2px); }
+    80% { transform: translate(1px, -2px); }
+    100% { transform: translate(0); }
+}
+
+@keyframes glitch-2 {
+    0% { transform: translate(0); }
+    20% { transform: translate(2px, -1px); }
+    40% { transform: translate(-2px, 1px); }
+    60% { transform: translate(1px, -2px); }
+    80% { transform: translate(-1px, 2px); }
+    100% { transform: translate(0); }
+}
+
+.letter.flickering {
+    animation: flicker 0.1s steps(1) infinite;
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.letter.scrambling {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.letter.revealed {
+    font-family: 'Inter', "DM Serif Display", sans-serif;
+    font-weight: 700;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ************************************************************
+ * 
+ *    6. FAVS SIDEBAR
+ * 
+ * ************************************************************ */
+
+.hero-favs {
+    position: absolute;
+    right: var(--spacing-m);
+    bottom: 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    font-family: 'Courier New', monospace;
+    z-index: 3;
+}
+
+.favs-title {
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.fav-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.fav-item:hover {
+    opacity: 0.8;
+}
+
+.fav-item.active {
+    opacity: 1;
+}
+
+.fav-item span {
+    font-size: 0.85rem;
+}
+
+.fav-box {
+    width: 1.25rem;
+    height: 1.25rem;
+    background: var(--color-fg);
+    transition: transform 0.3s ease;
+}
+
+.fav-item.active .fav-box {
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ************************************************************
+ * 
+ *    7. SCROLL ARROW
+ * 
+ * ************************************************************ */
+
+.scroll-arrow {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    z-index: 3;
+}
+
+.scroll-arrow svg {
+    width: 2rem;
+    height: 2rem;
+    fill: var(--color-fg);
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ************************************************************
+ * 
+ *    8. SEMESTER SECTION
+ * 
+ * ************************************************************ */
+
+.semester-section {
+    padding: var(--spacing-xl) var(--spacing-m);
+}
+
+.semester-title {
+    /* font-family: 'DM Serif Display', serif; */
+    font-family:'Inter', "DM Serif Display", sans-serif;
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: var(--spacing-l);
+    color: var(--color-fg);
+}
+
+.semester-grid {
+    display: grid;
+    grid-template-columns: 35% 1fr;
+    gap: var(--spacing-l);
+}
+
+/* Left Column - Description */
+.semester-description {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-m);
+}
+
+.semester-image {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: var(--color-fg);
+}
+
+.semester-description p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.9);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ************************************************************
+ * 
+ *    9. WEEK LINKS
+ * 
+ * ************************************************************ */
+
+.week-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.week-link {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 2.5rem;
+    background: transparent;
+    border: 1px solid var(--color-fg);
+    border-radius: 0;
+    text-decoration: none;
+    color: var(--color-fg);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0 1rem;
+    opacity: 0.6;
+    transition: opacity 0.3s ease, background 0.3s ease;
+}
+
+.week-link::after {
+    content: '→';
+    font-size: 1rem;
+    color: var(--color-fg);
+    opacity: 0;
+    transform: translateX(-5px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.week-link:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--color-fg);
+}
+
+.week-link:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ************************************************************
+ * 
+ *    10. WEEKLY LIST OVERRIDE
+ * 
+ * ************************************************************ */
+
+.weekly ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: var(--spacing-l);
+}
+
+.weekly ul li {
+    border: none;
+}
+
+.weekly ul li:first-child {
+    border: none;
+}
+
+.weekly ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 2.5rem;
+    background: transparent;
+    border: 1px solid var(--color-fg);
+    border-radius: 0;
+    text-decoration: none;
+    color: var(--color-fg);
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0 1rem;
+    opacity: 0.6;
+    transition: opacity 0.3s ease, background 0.3s ease;
+}
+
+.weekly ul li a::after {
+    content: '→';
+    font-size: 1rem;
+    color: var(--color-fg);
+    opacity: 0;
+    transform: translateX(-5px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.weekly ul li a:hover {
+    opacity: 1;
+    background: rgba(255, 255, 255, 0.1);
+    padding-left: 1rem;
+}
+
+.weekly ul li a:hover::after {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ************************************************************
+ * 
+ *    11. RESPONSIVE ADJUSTMENTS
+ * 
+ * ************************************************************ */
+
+@media (max-width: 768px) {
+    .hero-favs {
+        right: var(--spacing-s);
+        bottom: 6rem;
+    }
+
+    .semester-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .title-line:nth-child(2) {
+        margin-left: 5%;
+    }
+}
+
+@media (orientation: portrait) {
+    .title-line {
+        font-size: clamp(2.5rem, 10vw, 5rem);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ************************************************************
+ * 
+ *    12. FOOTER
+ * 
+ * ************************************************************ */
+
+footer {
+    background: var(--color-bg);
+}
+
+.scroll__top a {
+    color: var(--color-fg);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ************************************************************
+ * 
+ *    13. LIGHTBOX
+ * 
+ * ************************************************************ */
+
+#lightbox {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ************************************************************
+ * 
+ *    14. LOADING SCREEN / SPLASH
+ * 
+ * ************************************************************ */
+
+#splash-canvas-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+#splash-canvas-container canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Splash page specific styles - prefixed to avoid conflicts */
+.splash-page {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Bebas Neue', sans-serif;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.splash-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* Background images container */
+.splash-bg-images {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.splash-bg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+}
+
+.splash-bg-image.active {
+    opacity: 1;
+}
+
+/* Dark gradient overlay */
+.splash-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Content */
+.splash-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.splash-title {
+    font-size: clamp(3rem, 12vw, 10rem);
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    line-height: 0.95;
+    text-transform: uppercase;
+    margin: 0 0 3rem 0;
+}
+
+.splash-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1.1rem;
+    letter-spacing: 0.15em;
+    text-transform: lowercase;
+    animation: splash-pulse 2s ease-in-out infinite;
+}
+
+.splash-wrapper:hover {
+    opacity: 1;
+}
+
+/* Pointer icon */
+.splash-pointer-icon {
+    width: 24px;
+    height: 24px;
+}
+
+@keyframes splash-pulse {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ************************************************************
+ * 
+ *    15. EXPERIMENT BOX STYLES
+ * 
+ * ************************************************************ */
+
+/* The entire box - background image on the box itself! */
+.experiment-box {
+    width: 100%;
+    height: 2rem; /* Collapsed height */
+    margin-bottom: 1rem;
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center top; /* Image starts from top */
+    background-repeat: no-repeat;
+    transition: height 0.8s cubic-bezier(0.4, 0, 0.2, 1); /* Smooth height change */
+}
+
+/* When expanded - box gets taller, revealing more of the background image */
+.experiment-box.expanded {
+    height: 20rem; /* Expanded height - adjust as needed for your content */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ************************************************************
+ * 
+ *    16. GRADIENT OVERLAYS
+ * 
+ * ************************************************************ */
+
+/* Dark gradient overlay - makes white text more readable */
+.experiment-box.gradient-dark::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.2) 50%, rgba(0, 0, 0, 0.4) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Light gradient overlay - makes black text more readable */
+.experiment-box.gradient-light::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.3) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Strong dark gradient - even more readable for white text */
+.experiment-box.gradient-dark-strong::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.6) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Header area with title and chevron - sits on top of the image */
+.experiment-header {
+    height: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1.5rem;
+    position: relative;
+    z-index: 2; /* Above gradient overlay */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ************************************************************
+ * 
+ *    17. EXPERIMENT BOX TEXT STYLES
+ * 
+ * ************************************************************ */
+
+/* Title text */
+.experiment-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: white; /* White by default */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Shadow for readability */
+}
+
+/* Chevron icon */
+.experiment-chevron {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.experiment-chevron svg {
+    width: 100%;
+    height: 100%;
+    stroke: white; /* White by default */
+    stroke-width: 3;
+    fill: none;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)); /* Shadow for visibility */
+}
+
+/* Rotate chevron when expanded */
+.experiment-box.expanded .experiment-chevron {
+    transform: rotate(180deg);
+}
+
+/* Optional content area that shows when expanded */
+.experiment-content {
+    padding: 2rem 1.5rem;
+    color: white; /* White by default */
+    opacity: 0;
+    transition: opacity 0.4s ease 0.3s; /* Fade in after box expands */
+    position: relative;
+    z-index: 2; /* Above gradient overlay */
+}
+
+.experiment-box.expanded .experiment-content {
+    opacity: 1;
+}
+
+.experiment-content h3 {
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.experiment-content p {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.experiment-content img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ************************************************************
+ * 
+ *    18. EXPERIMENT BOX - DARK TEXT VERSION
+ *    Add class "dark-text" to experiment-box
+ *    (For bright/light background images)
+ * 
+ * ************************************************************ */
+
+.experiment-box.dark-text .experiment-title {
+    color: black;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5); /* White shadow for visibility on bright backgrounds */
+}
+
+.experiment-box.dark-text .experiment-chevron svg {
+    stroke: black;
+    filter: drop-shadow(0 2px 4px rgba(255, 255, 255, 0.5)); /* White shadow */
+}
+
+.experiment-box.dark-text .experiment-content {
+    color: black;
+}
+
+.experiment-box.dark-text .experiment-content h3 {
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+.experiment-box.dark-text .experiment-content p {
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive adjustments for experiment boxes */
+@media (orientation: portrait) {
+    .experiment-header {
+        padding: 0 1rem;
+    }
+    
+    .experiment-title {
+        font-size: 0.9rem;
+    }
+    
+    .experiment-content {
+        padding: 1.5rem 1rem;
+    }
+    
+    .experiment-box.expanded {
+        height: 25rem; /* Taller on mobile for better content display */
+    }
+}

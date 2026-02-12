@@ -1,0 +1,1665 @@
+/* ========================================
+   CATALOG.CSS - Catalogue of Making Landing Page
+   Separate from CPJ styles for easier control
+   ======================================== */
+
+/* ************************************************************
+ * 
+ *    1. BASE STYLES & VARIABLES
+ * 
+ * ************************************************************ */
+
+ :root {
+    --color-bg: #000;
+    --color-fg: #fff;
+    --font-primary: 'Inter', sans-serif;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-out-quart: cubic-bezier(0.25, 1, 0.5, 1);
+    --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body.catalog-page {
+    background-color: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-primary);
+    overflow-x: hidden;
+}
+
+/* ************************************************************
+ * 
+ *    2. PAGE WRAPPER
+ * 
+ * ************************************************************ */
+
+.catalog-page-wrapper {
+    position: relative;
+    min-height: 200vh;
+}
+
+/* ************************************************************
+ * 
+ *    3. HERO SECTION - FULL VIEWPORT
+ * 
+ * ************************************************************ */
+
+.catalog-hero {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+/* ************************************************************
+ * 
+ *    4. VIDEO BACKGROUND - FIXED BEHIND EVERYTHING
+ * 
+ * ************************************************************ */
+
+.catalog-video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    overflow: hidden;
+    background: #0a0a0a;
+}
+
+.catalog-video-bg video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+/* Optional: Dark overlay on video for better text readability */
+.catalog-video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Adjust opacity as needed */
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ************************************************************
+ * 
+ *    5. LOGO (TOP LEFT STAR)
+ * 
+ * ************************************************************ */
+
+.catalog-logo {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    z-index: 10;
+    width: 60px;
+    height: 60px;
+}
+
+.catalog-logo svg,
+.catalog-logo img {
+    width: 100%;
+    height: 100%;
+    fill: var(--color-fg);
+}
+
+/* ************************************************************
+ * 
+ *    5. HEADER TEXT (VISUAL HARMONICS)
+ * 
+ * ************************************************************ */
+
+.catalog-header-text {
+    position: absolute;
+    top: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--color-fg);
+}
+
+/* ************************************************************
+ * 
+ *    6. MAIN TITLE - CATALOGUE OF MAKING (Staggered Layout)
+ * 
+ * ************************************************************ */
+
+.catalog-title-container {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    max-width: 1200px;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.catalog-title-line {
+    font-size: clamp(3.5rem, 14vw, 10rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    line-height: 0.9;
+    color: var(--color-fg);
+    text-shadow: 0 4px 30px rgba(0,0,0,0.5);
+}
+
+/* CATALOGUE - Left aligned */
+.catalog-title-line.line-catalogue {
+    text-align: left;
+    margin-left: 5%;
+}
+
+/* [OF] - Centered */
+.catalog-title-line.line-of {
+    font-size: clamp(1.8rem, 6vw, 4.5rem);
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    line-height: 1.2;
+    text-align: center;
+}
+
+/* MAKING - Right aligned */
+.catalog-title-line.line-making {
+    text-align: right;
+    margin-right: 5%;
+}
+
+/* ====================================
+   LETTER ANIMATION STYLES (Catalog specific)
+   ==================================== */
+
+.catalog-title-line .catalog-letter {
+    display: inline-block;
+    opacity: 0;
+    font-weight: inherit; /* Inherit from parent (700) - fixes styles.css override */
+}
+
+.catalog-title-line .catalog-letter.catalog-visible {
+    opacity: 1 !important;
+}
+
+.catalog-title-line .catalog-letter.catalog-flickering {
+    animation: catalogLetterFlicker 0.15s ease-in-out infinite;
+}
+
+@keyframes catalogLetterFlicker {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 0.1; }
+}
+
+/* Hover shake effect */
+.catalog-title-line .catalog-letter.catalog-visible:hover {
+    animation: catalogLetterShake 0.4s ease-in-out forwards;
+    opacity: 1;
+}
+
+@keyframes catalogLetterShake {
+    0%, 100% { transform: translateX(0) translateY(0); opacity: 1; }
+    20% { transform: translateX(-1px) translateY(0.5px); opacity: 1; }
+    40% { transform: translateX(1px) translateY(-0.5px); opacity: 1; }
+    60% { transform: translateX(-0.5px) translateY(0.5px); opacity: 1; }
+    80% { transform: translateX(0.5px) translateY(-0.5px); opacity: 1; }
+}
+
+/* ************************************************************
+ * 
+ *    7. BINARY CODE DECORATION (Optional)
+ * 
+ * ************************************************************ */
+
+.catalog-binary {
+    position: absolute;
+    z-index: 2;
+    font-family: 'Courier New', monospace;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.3);
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+    pointer-events: none;
+}
+
+.catalog-binary.left {
+    left: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    writing-mode: horizontal-tb;
+    max-width: 30%;
+    white-space: normal;
+    word-break: break-all;
+    line-height: 1.5;
+}
+
+.catalog-binary.right {
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: right;
+    max-width: 30%;
+    white-space: normal;
+    word-break: break-all;
+    line-height: 1.5;
+}
+
+/* ************************************************************
+ * 
+ *    8. SCROLL ARROW
+ * 
+ * ************************************************************ */
+
+.catalog-scroll-arrow {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    cursor: pointer;
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.catalog-scroll-arrow:hover {
+    opacity: 0.7;
+}
+
+.catalog-scroll-arrow svg {
+    width: 2rem;
+    height: 2rem;
+    stroke: var(--color-fg);
+    stroke-width: 2;
+    fill: none;
+    animation: catalog-bounce 2.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+@keyframes catalog-bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+}
+
+/* ************************************************************
+ * 
+ *    9. RESPONSIVE ADJUSTMENTS
+ * 
+ * ************************************************************ */
+
+@media (max-width: 768px) {
+    .catalog-logo {
+        top: 1.5rem;
+        left: 1.5rem;
+        width: 45px;
+        height: 45px;
+    }
+
+    .catalog-header-text {
+        top: 1.8rem;
+        font-size: 0.7rem;
+        letter-spacing: 0.25em;
+    }
+
+    .catalog-title-line {
+        font-size: clamp(2.5rem, 16vw, 5rem);
+    }
+
+    .catalog-title-line.line-of {
+        font-size: clamp(1.2rem, 7vw, 2rem);
+    }
+
+    .catalog-title-line.line-catalogue {
+        margin-left: 0;
+    }
+
+    .catalog-title-line.line-making {
+        margin-right: 0;
+    }
+
+    .catalog-binary {
+        display: none; /* Hide binary on mobile for cleaner look */
+    }
+
+    .catalog-scroll-arrow {
+        bottom: 2rem;
+    }
+}
+
+/* ************************************************************
+ * 
+ *    10. CONTENT SECTION - OVERLAYS VIDEO
+ * 
+ * ************************************************************ */
+
+.catalog-content {
+    position: relative;
+    z-index: 1;
+    min-height: 100vh;
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent bg to overlay video */
+}
+
+/* Intro text block */
+.catalog-intro {
+    max-width: 600px;
+    margin-left: 15%;
+    margin-top: 4rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+
+
+}
+
+.catalog-intro p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--color-fg);
+    font-weight: 400;
+}
+
+@media (max-width: 768px) {
+    .catalog-intro {
+        margin-left: 0;
+        max-width: 100%;
+    }
+}
+
+/* ************************************************************
+ * 
+ *    11. EXPERIMENTS SECTION - SOLID BLACK BACKGROUND
+ * 
+ * ************************************************************ */
+
+.experiments-section {
+    position: relative;
+    z-index: 2;
+    background: #0a0a0a; /* Solid black - covers the video */
+    min-height: 100vh;
+    padding-bottom: 4rem;
+}
+
+/* Sticky Header Bar */
+.experiments-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #0a0a0a;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Left side - View Mode Toggle */
+.view-mode-toggle {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.view-mode-label {
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--color-fg);
+}
+
+.view-mode-btn {
+    width: 2.5rem;
+    height: 2.5rem;
+    background: transparent;
+    border: 2px solid var(--color-fg);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.view-mode-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.view-mode-btn.active {
+    background: var(--color-fg);
+}
+
+.view-mode-btn svg {
+    width: 1.2rem;
+    height: 1.2rem;
+    stroke: var(--color-fg);
+    stroke-width: 2;
+    fill: none;
+    transition: stroke 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.view-mode-btn.active svg {
+    stroke: var(--color-bg);
+}
+
+/* Center - Experiments Title */
+.experiments-title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--color-fg);
+}
+
+/* Right side - empty for balance */
+.experiments-header-right {
+    width: 150px; /* Balance the left side */
+}
+
+/* ************************************************************
+ * 
+ *    12. GRID VIEW - 4 COLUMN MOSAIC
+ * 
+ * ************************************************************ */
+
+.experiments-container {
+    padding: 1rem;
+}
+
+.experiments-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.experiment-card {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+.experiment-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+                transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.experiment-card:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+}
+
+.experiment-card-label {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-fg);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    opacity: 0.9;
+    transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.experiment-card:hover .experiment-card-label {
+    opacity: 1;
+}
+
+/* ************************************************************
+ * 
+ *    13. LIST VIEW
+ * 
+ * ************************************************************ */
+
+.experiments-list {
+    display: none; /* Hidden by default, grid is shown */
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    min-height: 80vh;
+    padding: 2rem;
+}
+
+.experiments-list.active {
+    display: grid;
+}
+
+.experiments-grid.hidden {
+    display: none;
+}
+
+/* Left side - List of experiments */
+.experiments-list-items {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding-right: 2rem;
+}
+
+.experiment-list-item {
+    padding: 1rem 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-fg);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    display: block;
+    border: 2px solid transparent;
+}
+
+.experiment-list-item:hover,
+.experiment-list-item.active {
+    border: 0.5px solid var(--color-fg);
+}
+
+.experiment-list-item:not(:hover):not(.active) {
+    opacity: 0.6;
+}
+
+/* Right side - Preview image */
+.experiments-list-preview {
+    position: sticky;
+    top: 6rem;
+    height: fit-content;
+}
+
+.experiments-list-preview img {
+    width: 100%;
+    max-height: 70vh;
+    object-fit: cover;
+    transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ************************************************************
+ * 
+ *    14. RESPONSIVE - EXPERIMENTS
+ * 
+ * ************************************************************ */
+
+@media (max-width: 1024px) {
+    .experiments-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .experiments-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .experiments-header {
+        padding: 0.75rem 1rem;
+    }
+
+    .view-mode-label {
+        font-size: 0.75rem;
+    }
+
+    .view-mode-btn {
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .experiments-title {
+        font-size: 0.75rem;
+    }
+
+    .experiment-card-label {
+        font-size: 0.75rem;
+        bottom: 0.75rem;
+        left: 0.75rem;
+    }
+
+    /* List view stacks on mobile */
+    .experiments-list {
+        grid-template-columns: 1fr;
+    }
+
+    .experiments-list-preview {
+        order: -1;
+        position: relative;
+        top: 0;
+        margin-bottom: 2rem;
+    }
+
+    .experiment-list-item {
+        font-size: 1.1rem;
+        padding: 0.75rem 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .experiments-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ************************************************************
+ * 
+ *    15. CHAPTER PAGE - BASE STYLES
+ * 
+ * ************************************************************ */
+
+ .chapter-page {
+    background-color: #000;
+    color: #fff;
+}
+
+.chapter-page main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* ************************************************************
+ * 
+ *    16. CHAPTER HERO
+ * 
+ * ************************************************************ */
+
+.chapter-hero {
+    padding: 6rem 0 4rem 0;
+}
+
+.chapter-title {
+    font-size: clamp(3rem, 12vw, 8rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    line-height: 1;
+    margin: 0;
+}
+
+/* ************************************************************
+ * 
+ *    17. CHAPTER INTRO
+ * 
+ * ************************************************************ */
+
+.chapter-intro {
+    padding: 2rem 0 4rem 0;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.chapter-intro .intro-text {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1.5rem;
+    text-align: justify;
+    text-align-last: justify;
+    text-justify: inter-character;
+}
+
+.chapter-intro .intro-text:last-child {
+    margin-bottom: 0;
+}
+
+/* ************************************************************
+ * 
+ *    18. EXPERIMENT SECTION
+ * 
+ * ************************************************************ */
+
+.experiment-section {
+    padding: 4rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.experiment-header-row {
+    margin-bottom: 2rem;
+}
+
+.experiment-detail-title {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+/* ************************************************************
+ * 
+ *    19. TWO COLUMN CONTENT ROW
+ * 
+ * ************************************************************ */
+
+.experiment-content-row {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    align-items: start;
+}
+
+.experiment-description {
+    max-width: 500px;
+}
+
+.experiment-description p {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1rem;
+}
+
+.experiment-description p:last-child {
+    margin-bottom: 0;
+}
+
+/* Preview boxes */
+.experiment-preview-boxes {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.preview-box {
+    width: 80px;
+    height: 80px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+}
+
+.preview-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+    transition: filter 0.4s var(--ease-smooth);
+}
+
+.preview-box:hover img {
+    filter: grayscale(0%);
+}
+
+/* ************************************************************
+ * 
+ *    20. SPLIT HEADER (Description left, Title right)
+ * 
+ * ************************************************************ */
+
+.experiment-split-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    align-items: start;
+}
+
+.experiment-title-right {
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+}
+
+.experiment-title-right .experiment-detail-title {
+    text-align: right;
+}
+
+/* ************************************************************
+ * 
+ *    21. IMAGE GALLERIES
+ * 
+ * ************************************************************ */
+
+.experiment-gallery {
+    display: grid;
+    gap: 1rem;
+}
+
+.experiment-gallery.gallery-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.experiment-gallery.gallery-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.experiment-gallery.gallery-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.experiment-gallery.gallery-1 {
+    grid-template-columns: 1fr;
+}
+
+.gallery-item {
+    aspect-ratio: 1 / 1;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s var(--ease-smooth);
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+/* ************************************************************
+ * 
+ *    22. REVERSE ROW (Image left, Text right)
+ * 
+ * ************************************************************ */
+
+.experiment-content-row.reverse {
+    grid-template-columns: 1fr 1fr;
+}
+
+.experiment-content-row.reverse .experiment-image {
+    order: -1;
+}
+
+.experiment-image {
+    width: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+}
+
+.experiment-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ************************************************************
+ * 
+ *    23. EXPERIMENT BOXES CONTAINER
+ * 
+ * ************************************************************ */
+
+.experiment-boxes-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 2rem 0;
+}
+
+/* ************************************************************
+ * 
+ *    24. TEXT + WIDE IMAGE BLOCK
+ * 
+ * ************************************************************ */
+
+.experiment-text-block {
+    max-width: 600px;
+    margin-bottom: 2rem;
+}
+
+.experiment-text-block p {
+    font-size: 0.85rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1rem;
+}
+
+.experiment-wide-image {
+    width: 100%;
+    margin: 2rem 0;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+}
+
+.experiment-wide-image img,
+.experiment-wide-image video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ************************************************************
+ * 
+ *    25. TEXT LEFT + STACKED IMAGES RIGHT
+ * 
+ * ************************************************************ */
+
+.experiment-stacked-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin: 2rem 0;
+    align-items: start;
+}
+
+.experiment-stacked-images {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.experiment-stacked-images .gallery-item {
+    aspect-ratio: 4 / 3;
+}
+
+/* ************************************************************
+ * 
+ *    26. CHAPTER PAGE - RESPONSIVE
+ * 
+ * ************************************************************ */
+
+@media (max-width: 1024px) {
+    .experiment-gallery.gallery-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .chapter-page main {
+        padding: 0 1rem;
+    }
+
+    .chapter-hero {
+        padding: 4rem 0 2rem 0;
+    }
+
+    .experiment-content-row {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .experiment-content-row.reverse {
+        grid-template-columns: 1fr;
+    }
+
+    .experiment-content-row.reverse .experiment-image {
+        order: -1;
+    }
+
+    .experiment-preview-boxes {
+        order: -1;
+    }
+
+    .experiment-split-header {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .experiment-title-right {
+        justify-content: flex-start;
+        order: -1;
+    }
+
+    .experiment-title-right .experiment-detail-title {
+        text-align: left;
+    }
+
+    .experiment-gallery.gallery-4,
+    .experiment-gallery.gallery-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .experiment-stacked-row {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .experiment-stacked-images {
+        order: -1;
+    }
+
+    .preview-box {
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media (max-width: 480px) {
+    .experiment-gallery.gallery-4,
+    .experiment-gallery.gallery-3,
+    .experiment-gallery.gallery-2 {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ************************************************************
+ * 
+ *    27. CHAPTER HERO WITH IMAGES
+ * 
+ * ************************************************************ */
+
+.chapter-hero-images {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.chapter-hero-images .gallery-item {
+    aspect-ratio: 1 / 1;
+}
+
+/* ************************************************************
+ * 
+ *    28. IMAGE LEFT + TEXT RIGHT (with boxes)
+ * 
+ * ************************************************************ */
+
+.experiment-row-image-text {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    align-items: start;
+}
+
+.experiment-row-image-text .experiment-image {
+    aspect-ratio: 4 / 5;
+}
+
+.experiment-row-image-text .experiment-text-side {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.experiment-row-image-text .experiment-boxes-container {
+    margin: 0;
+}
+
+/* ************************************************************
+ * 
+ *    29. PORTRAIT GALLERY (Phone screens / taller images)
+ * 
+ * ************************************************************ */
+
+.experiment-gallery.gallery-portrait {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.experiment-gallery.gallery-portrait .gallery-item {
+    aspect-ratio: 9 / 16;
+}
+
+/* ************************************************************
+ * 
+ *    30. CENTERED EXPERIMENT TITLE
+ * 
+ * ************************************************************ */
+
+.experiment-header-row.centered {
+    text-align: center;
+}
+
+/* ************************************************************
+ * 
+ *    31. ALTERNATING / ZIGZAG ROWS
+ * 
+ * ************************************************************ */
+
+.experiment-alternating {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.experiment-alt-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.experiment-alt-row .experiment-description {
+    max-width: none;
+}
+
+.experiment-alt-row .experiment-image {
+    aspect-ratio: 1 / 1;
+}
+
+/* Even rows: image on right (default) */
+/* Odd rows: image on left */
+.experiment-alt-row.image-left .experiment-image {
+    order: -1;
+}
+
+/* ************************************************************
+ * 
+ *    32. ADDITIONAL RESPONSIVE
+ * 
+ * ************************************************************ */
+
+@media (max-width: 768px) {
+    .chapter-hero-images {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .experiment-row-image-text {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .experiment-row-image-text .experiment-image {
+        order: -1;
+    }
+
+    .experiment-gallery.gallery-portrait {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .experiment-alt-row {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .experiment-alt-row .experiment-image {
+        order: -1;
+    }
+}
+
+@media (max-width: 480px) {
+    .chapter-hero-images {
+        grid-template-columns: 1fr;
+    }
+
+    .experiment-gallery.gallery-portrait {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ************************************************************
+ * 
+ *    27. MODIFIERS & VARIATIONS
+ * 
+ * ************************************************************ */
+
+/* Centered experiment title */
+.experiment-header-row.centered {
+    text-align: center;
+}
+
+/* Hero images grid */
+.chapter-hero .experiment-gallery {
+    margin-top: 2rem;
+}
+
+/* Portrait gallery (phone screens) */
+.gallery-item.portrait {
+    aspect-ratio: 9 / 16;
+}
+
+/* Text side with boxes integrated */
+.experiment-text-side {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.experiment-text-side .experiment-description {
+    max-width: none;
+}
+
+.experiment-text-side .experiment-boxes-container {
+    margin: 0;
+}
+
+
+
+
+
+
+
+/* ************************************************************
+ * 
+ *    29. HERO WITH IMAGE + STACKED BOXES
+ * 
+ * ************************************************************ */
+
+ .chapter-hero-split {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.chapter-hero-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+}
+
+.chapter-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.chapter-hero-boxes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    justify-content: flex-end;
+}
+
+.chapter-hero-boxes .preview-box {
+    width: 60px;
+    height: 60px;
+}
+
+/* ************************************************************
+ * 
+ *    30. OUTCOMES / BENTO GRID
+ * 
+ * ************************************************************ */
+
+.outcomes-section {
+    padding: 4rem 0;
+}
+
+.outcomes-row {
+    display: grid;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Row: 1 image + title */
+.outcomes-row.with-title {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+}
+
+.outcomes-title {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    padding-left: 2rem;
+}
+
+/* Row: 2 images left + 1 offset right */
+.outcomes-row.offset-right {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.outcomes-row.offset-right .gallery-item:last-child {
+    grid-column: 3;
+    align-self: end;
+}
+
+/* Row: 1 image left + 1 offset right */
+.outcomes-row.two-offset {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.outcomes-row.two-offset .gallery-item:first-child {
+    grid-column: 1;
+}
+
+.outcomes-row.two-offset .gallery-item:last-child {
+    grid-column: 3;
+}
+
+/* Row: image + text */
+.outcomes-row.with-text {
+    grid-template-columns: 1fr 2fr;
+    gap: 3rem;
+    align-items: start;
+    margin-top: 2rem;
+}
+
+.outcomes-row.with-text .experiment-description {
+    max-width: none;
+}
+
+/* ************************************************************
+ * 
+ *    31. OUTCOMES RESPONSIVE
+ * 
+ * ************************************************************ */
+
+@media (max-width: 768px) {
+    .chapter-hero-split {
+        grid-template-columns: 1fr;
+    }
+
+    .chapter-hero-boxes {
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .outcomes-row.with-title,
+    .outcomes-row.offset-right,
+    .outcomes-row.two-offset,
+    .outcomes-row.with-text {
+        grid-template-columns: 1fr;
+    }
+
+    .outcomes-row.offset-right .gallery-item:last-child,
+    .outcomes-row.two-offset .gallery-item:last-child {
+        grid-column: auto;
+    }
+
+    .outcomes-title {
+        padding-left: 0;
+        text-align: center;
+    }
+}
+
+/* ************************************************************
+ * 
+ *    32. RIGHT-ALIGNED TITLE
+ * 
+ * ************************************************************ */
+
+ .experiment-header-row.right {
+    text-align: right;
+}
+
+/* ************************************************************
+ * 
+ *    33. STACKED IMAGES - SQUARE MODIFIER
+ * 
+ * ************************************************************ */
+
+.experiment-stacked-images.square {
+    width: 40%;
+    flex-shrink: 0;
+}
+
+.experiment-stacked-images.square .gallery-item {
+    aspect-ratio: 1 / 1;
+}
+
+/* ************************************************************
+ * 
+ *    34. TWO-COLUMN TEXT
+ * 
+ * ************************************************************ */
+
+.experiment-text-columns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin: 2rem 0;
+}
+
+.experiment-text-columns .experiment-description {
+    max-width: none;
+}
+
+/* ************************************************************
+ * 
+ *    35. STAGGERED TEXT + IMAGE ROWS (Diagonal offset)
+ * 
+ * ************************************************************ */
+
+.experiment-staggered {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    margin: 3rem 0;
+}
+
+.staggered-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+}
+
+.staggered-row .experiment-description {
+    max-width: 45%;
+}
+
+.staggered-row .gallery-item {
+    width: 35%;
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+}
+
+/* Row with text left, image right */
+.staggered-row.text-left {
+    justify-content: space-between;
+}
+
+/* Row with image left, text right - offset inward */
+.staggered-row.image-left {
+    padding-left: 15%;
+}
+
+.staggered-row.image-left .gallery-item {
+    order: -1;
+}
+
+/* ************************************************************
+ * 
+ *    36. CHAPTER 4 RESPONSIVE
+ * 
+ * ************************************************************ */
+
+@media (max-width: 768px) {
+    .experiment-stacked-images.square {
+        width: 100%;
+    }
+
+    .experiment-text-columns {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .staggered-row {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .staggered-row .experiment-description,
+    .staggered-row .gallery-item {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .staggered-row.image-left {
+        padding-left: 0;
+    }
+
+    .staggered-row.image-left .gallery-item {
+        order: -1;
+    }
+}
+
+
+/* ************************************************************
+ * 
+ *    37. HERO VIDEO
+ * 
+ * ************************************************************ */
+
+ .chapter-hero-video {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin-bottom: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    overflow: hidden;
+}
+
+.chapter-hero-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ************************************************************
+ * 
+ *    38. THREE-COLUMN TEXT
+ * 
+ * ************************************************************ */
+
+.experiment-text-columns-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.experiment-text-columns-3 .experiment-description {
+    max-width: none;
+}
+
+/* ************************************************************
+ * 
+ *    39. COMPACT IMAGE + TEXT ROW
+ * 
+ * ************************************************************ */
+
+.experiment-row-compact {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    margin: 2rem 0;
+}
+
+.experiment-row-compact .gallery-item {
+    width: 25%;
+    aspect-ratio: 1 / 1;
+    flex-shrink: 0;
+}
+
+.experiment-row-compact .experiment-description {
+    max-width: none;
+    flex: 1;
+}
+
+/* ************************************************************
+ * 
+ *    40. PORTRAIT IMAGE + STACKED SQUARES
+ * 
+ * ************************************************************ */
+
+.experiment-portrait-row {
+    display: flex;
+    gap: 1rem;
+    margin: 3rem 0;
+}
+
+.experiment-portrait-row .portrait-tall {
+    width: 40%;
+    aspect-ratio: 3 / 4;
+    flex-shrink: 0;
+}
+
+.experiment-portrait-row .experiment-stacked-images {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 35%;
+}
+
+.experiment-portrait-row .experiment-stacked-images .gallery-item {
+    aspect-ratio: 1 / 1;
+}
+
+/* ************************************************************
+ * 
+ *    41. WIDE IMAGE + TEXT ROW
+ * 
+ * ************************************************************ */
+
+.experiment-wide-text-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+    align-items: end;
+    margin: 3rem 0;
+}
+
+.experiment-wide-text-row .experiment-wide-image {
+    margin: 0;
+}
+
+.experiment-wide-text-row .experiment-description {
+    max-width: none;
+}
+
+/* ************************************************************
+ * 
+ *    42. CHAPTER 5 RESPONSIVE
+ * 
+ * ************************************************************ */
+
+@media (max-width: 768px) {
+    .experiment-text-columns-3 {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .experiment-row-compact {
+        flex-direction: column;
+    }
+
+    .experiment-row-compact .gallery-item {
+        width: 100%;
+    }
+
+    .experiment-portrait-row {
+        flex-direction: column;
+    }
+
+    .experiment-portrait-row .portrait-tall,
+    .experiment-portrait-row .experiment-stacked-images {
+        width: 100%;
+    }
+
+    .experiment-wide-text-row {
+        grid-template-columns: 1fr;
+    }
+}

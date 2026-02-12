@@ -25,26 +25,30 @@
 
   /* color */
   --color-0: black;
-  --color-1: white;
-  --color-2: #222;
-  --color-3: #ccc;
+  --color-1: rgb(0, 0, 0);
+  --color-2: #ffffff;
+  --color-3: #858585;
   --color-4: red;
-  --color-5: coral;
-  --color-6: orange;
+  --color-5: rgb(25, 28, 225);
+
+  --color-6: rgb(182, 194, 238);
   --color-7: lime;
   --color-8: green;
   --color-9: darkgreen;
   --color-10: dodgerblue;
   --color-11: blue;
 
-  --color-fg: #111111;
-  --color-bg: #efefef;
+  --color-fg: #ffffff;
+  --color-bg: #000000;
   --color-header-bg: #efefef;
   --color-header-fg: black;
-  --color-title: orange;
+  --color-title: rgb(0, 38, 255);
   --color-link:var(--color-5);
-  --color-link-hover: var(--color-6);
-  --color-nav-link: var(--color-2);
+
+  /* APAAN SIH BRO NGAPAIN TARO SINI */
+
+  --color-link-hover: var(--color-6); 
+  --color-nav-link: var(--color-0);
   --color-nav-link-hover: var(--color-3);
 
   --header__height: 3rem;
@@ -327,7 +331,7 @@
 }
 
 .color__bg-1 {
-  background: var(--color-1) !important;
+  background: var(--color-0) !important;
 }
 
 .color__bg-2 {
